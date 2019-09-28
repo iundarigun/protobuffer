@@ -1,0 +1,23 @@
+syntax="proto3";
+
+option java_package="br.com.devcave.protobuf";
+option java_outer_classname="ProtoTest";
+
+message Team {
+    int32 id = 1;
+    string team_name = 2;
+    repeated Employee employee = 3;
+}
+
+message Employee {
+    int32 id = 1;
+    string first_name = 2;
+    string last_name = 3;
+    string email = 4;
+    JobType job = 5;
+    enum JobType {
+        DEV = 0;
+        LEADER = 1;
+        MANAGER = 2;
+    }
+}
